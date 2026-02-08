@@ -1,0 +1,52 @@
+# Sling Replication: Postgres to DuckDB
+#
+# This replication syncs data from a Postgres database to DuckDB.
+#
+# Usage:
+#   sling run -r replication.yaml
+
+source: POSTGRES_SOURCE
+target: DUCKDB_TARGET
+
+defaults:
+  mode: full-refresh
+  object: "{stream_schema}_{stream_table}"
+
+streams:
+  # Example: Sync specific tables
+  public.users:
+    mode: incremental
+    primary_key: id
+    update_key: updated_at
+    object: users
+
+  public.orders:
+    mode: incremental
+    primary_key: id
+    update_key: updated_at
+    object: orders
+
+  public.products:
+    mode: full-refresh
+    object: products
+
+  # Example: Sync all tables from a schema
+  # public.*:
+  #   mode: full-refresh
+  #   object: "{stream_table}"
+
+env:
+  # Source connection (Postgres)
+  POSTGRES_SOURCE: |
+    type: postgres
+    host: ${POSTGRES_HOST}
+    port: ${POSTGRES_PORT:-5432}
+    database: ${POSTGRES_DATABASE}
+    user: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
+    sslmode: ${POSTGRES_SSLMODE:-prefer}
+
+  # Target connection (DuckDB)
+  DUCKDB_TARGET: |
+    type: duckdb
+    instance: ${DEST_DUCKDB_PATH:-./data.duckdb}

@@ -1,0 +1,12 @@
+source_type: "github"
+destination_type: "duckdb"
+
+source_configuration:
+  repos: "dlt-hub/dlt,dagster-io/dagster"
+  resources:
+    - "issues"
+    - "pull_requests"
+
+tool: "dlt"
+version: "1.0.0"
+created_at: "2024-01-15T10:00:00Z"

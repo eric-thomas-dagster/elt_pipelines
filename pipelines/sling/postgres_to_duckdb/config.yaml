@@ -1,0 +1,11 @@
+source_type: "postgres"
+destination_type: "duckdb"
+
+source_configuration:
+  schemas: "public"
+  tables: "users,orders,products"
+  incremental: true
+
+tool: "sling"
+version: "1.0.0"
+created_at: "2024-01-15T10:00:00Z"

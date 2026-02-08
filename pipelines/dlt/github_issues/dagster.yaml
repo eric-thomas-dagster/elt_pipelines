@@ -1,0 +1,22 @@
+enabled: true
+description: "Load GitHub issues, PRs, and commits from repositories"
+group: "github"
+
+owners:
+  - "data-team@company.com"
+
+schedule:
+  enabled: true
+  cron: "0 */6 * * *"  # Every 6 hours
+  timezone: "UTC"
+
+partitions:
+  enabled: false
+
+tags:
+  tool: "dlt"
+  source: "github"
+  team: "data-engineering"
+
+retries: 3
+retry_delay: 60
