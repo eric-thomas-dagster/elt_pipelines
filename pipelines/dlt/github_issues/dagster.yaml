@@ -1,4 +1,4 @@
-enabled: true
+enabled: false
 description: Load GitHub issues, PRs, and commits from repositories
 group: github
 owners:
