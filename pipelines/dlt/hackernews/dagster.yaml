@@ -1,4 +1,4 @@
-enabled: false
+enabled: true
 description: Fetch top and best stories from Hacker News API
 group: news
 owners:
