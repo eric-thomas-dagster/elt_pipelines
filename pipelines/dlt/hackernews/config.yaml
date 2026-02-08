@@ -1,0 +1,16 @@
+# Hacker News Pipeline Configuration
+pipeline_name: "hackernews"
+destination: "duckdb"
+dataset_name: "hackernews_data"
+
+# Resources to load
+resources:
+  - name: "top_stories"
+    config:
+      max_items: 100
+  - name: "best_stories"
+    config:
+      max_items: 50
+
+# No credentials needed - public API
+credentials: {}
