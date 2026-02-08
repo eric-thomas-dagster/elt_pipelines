@@ -1,22 +1,18 @@
-enabled: true
-description: "Fetch top and best stories from Hacker News API"
-group: "news"
-
+enabled: false
+description: Fetch top and best stories from Hacker News API
+group: news
 owners:
-  - "data-team@company.com"
-
+- data-team@company.com
 schedule:
   enabled: true
-  cron_schedule: "0 */2 * * *"  # Every 2 hours
-  timezone: "UTC"
-
+  cron_schedule: 0 */2 * * *
+  timezone: UTC
 tags:
-  tool: "dlt"
-  source: "hackernews"
-  destination: "duckdb"
-  team: "data-engineering"
-  public_api: "true"
-  environment: "demo"
-
+  tool: dlt
+  source: hackernews
+  destination: duckdb
+  team: data-engineering
+  public_api: 'true'
+  environment: demo
 retries: 2
 retry_delay: 30
