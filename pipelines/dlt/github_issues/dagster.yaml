@@ -1,19 +1,15 @@
-enabled: true
-description: "Load GitHub issues, PRs, and commits from repositories"
-group: "github"
-
+enabled: false
+description: Load GitHub issues, PRs, and commits from repositories
+group: github
 owners:
-  - "data-team@company.com"
-
+- data-team@company.com
 schedule:
   enabled: true
-  cron_schedule: "0 */6 * * *"  # Every 6 hours
-  timezone: "UTC"
-
+  cron_schedule: 0 */6 * * *
+  timezone: UTC
 tags:
-  tool: "dlt"
-  source: "github"
-  team: "data-engineering"
-
+  tool: dlt
+  source: github
+  team: data-engineering
 retries: 3
 retry_delay: 60
