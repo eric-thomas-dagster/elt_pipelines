@@ -1,0 +1,7 @@
+source_type: rest_api
+configuration:
+  base_url: "https://api.stripe.com/v1"
+  resources:
+    - payment_intents
+    - customers
+    - charges

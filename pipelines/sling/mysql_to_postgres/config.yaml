@@ -1,0 +1,8 @@
+source_type: mysql
+destination_type: postgres
+configuration:
+  mode: incremental
+  streams:
+    - users
+    - orders
+    - products

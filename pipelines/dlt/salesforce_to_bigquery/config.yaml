@@ -1,0 +1,8 @@
+source_type: salesforce
+destination_type: bigquery
+configuration:
+  objects:
+    - Account
+    - Opportunity
+    - Contact
+    - Lead

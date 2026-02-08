@@ -1,0 +1,6 @@
+source_type: rest_api
+configuration:
+  base_url: "https://pokeapi.co/api/v2"
+  resources:
+    - pokemon
+    - types

@@ -1,0 +1,24 @@
+enabled: true
+description: "Sync Salesforce CRM data (Accounts, Opportunities, Contacts, Leads) to BigQuery"
+group: "crm"
+
+owners:
+  - "sales-ops@company.com"
+  - "data-team@company.com"
+
+schedule:
+  enabled: true
+  cron_schedule: "0 1,13 * * *"  # Twice daily at 1 AM and 1 PM
+  timezone: "America/New_York"
+
+tags:
+  tool: "dlt"
+  source: "salesforce"
+  destination: "bigquery"
+  team: "sales-operations"
+  data_domain: "crm"
+  criticality: "high"
+  pii: "true"
+
+retries: 3
+retry_delay: 180

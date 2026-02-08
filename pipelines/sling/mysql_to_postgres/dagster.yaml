@@ -1,0 +1,23 @@
+enabled: true
+description: "Replicate MySQL application database to Postgres analytics warehouse"
+group: "database_replication"
+
+owners:
+  - "data-team@company.com"
+  - "analytics-team@company.com"
+
+schedule:
+  enabled: true
+  cron_schedule: "0 */3 * * *"  # Every 3 hours
+  timezone: "UTC"
+
+tags:
+  tool: "sling"
+  source: "mysql"
+  destination: "postgres"
+  team: "data-engineering"
+  mode: "incremental"
+  criticality: "medium"
+
+retries: 3
+retry_delay: 90
