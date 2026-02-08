@@ -7,11 +7,8 @@ owners:
 
 schedule:
   enabled: true
-  cron: "0 2 * * *"  # Daily at 2 AM
+  cron_schedule: "0 2 * * *"  # Daily at 2 AM
   timezone: "UTC"
-
-partitions:
-  enabled: false
 
 tags:
   tool: "sling"
