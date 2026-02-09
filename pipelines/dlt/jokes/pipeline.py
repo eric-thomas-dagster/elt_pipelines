@@ -25,8 +25,12 @@ def get_programming_jokes(count: int = 10) -> Iterator[Dict[str, Any]]:
             }
 
 
-def run(**kwargs):
-    """Execute the jokes pipeline."""
+def run(partition_key: str = None):
+    """Execute the jokes pipeline.
+
+    Args:
+        partition_key: Partition key for partitioned assets (e.g., "2024-01-01")
+    """
     # Configure the pipeline
     pipeline = dlt.pipeline(
         pipeline_name="jokes",

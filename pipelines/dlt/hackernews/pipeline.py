@@ -56,8 +56,12 @@ def get_best_stories(max_items: int = 30) -> Iterator[Dict[str, Any]]:
             }
 
 
-def run(**kwargs):
-    """Execute the Hacker News pipeline."""
+def run(partition_key: str = None):
+    """Execute the Hacker News pipeline.
+
+    Args:
+        partition_key: Partition key for partitioned assets (e.g., "2024-01-01")
+    """
     # Configure the pipeline
     pipeline = dlt.pipeline(
         pipeline_name="hackernews",
