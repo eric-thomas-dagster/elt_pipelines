@@ -25,7 +25,8 @@ def get_programming_jokes(count: int = 10) -> Iterator[Dict[str, Any]]:
             }
 
 
-if __name__ == "__main__":
+def run(**kwargs):
+    """Execute the jokes pipeline."""
     # Configure the pipeline
     pipeline = dlt.pipeline(
         pipeline_name="jokes",
@@ -35,4 +36,9 @@ if __name__ == "__main__":
 
     # Run the pipeline
     load_info = pipeline.run(get_programming_jokes())
-    print(load_info)
+    print(f"Pipeline completed: {load_info}")
+    return load_info
+
+
+if __name__ == "__main__":
+    run()
