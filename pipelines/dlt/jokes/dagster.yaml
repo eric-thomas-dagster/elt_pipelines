@@ -1,0 +1,22 @@
+enabled: true
+description: "Fetch programming jokes from JokeAPI"
+group: "fun"
+
+owners:
+  - "data-team@company.com"
+
+schedule:
+  enabled: true
+  cron_schedule: "0 9 * * *"  # Every day at 9 AM
+  timezone: "UTC"
+
+tags:
+  tool: "dlt"
+  source: "jokeapi"
+  destination: "duckdb"
+  team: "data-engineering"
+  public_api: "true"
+  environment: "demo"
+
+retries: 2
+retry_delay: 30
