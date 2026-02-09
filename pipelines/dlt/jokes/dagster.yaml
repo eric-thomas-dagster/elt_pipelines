@@ -2,6 +2,11 @@ enabled: true
 description: "Fetch programming jokes from JokeAPI"
 group: "fun"
 
+kinds:
+  - "dlt"
+  - "jokeapi"
+  - "duckdb"
+
 owners:
   - "data-team@company.com"
 

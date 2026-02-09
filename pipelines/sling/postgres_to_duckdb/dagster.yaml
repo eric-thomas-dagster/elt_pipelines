@@ -2,6 +2,11 @@ enabled: true
 description: "Sync Postgres database tables to DuckDB"
 group: "database_sync"
 
+kinds:
+  - "sling"
+  - "postgres"
+  - "duckdb"
+
 owners:
   - "data-team@company.com"
 

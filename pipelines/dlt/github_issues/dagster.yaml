@@ -2,6 +2,11 @@ enabled: true
 description: "Load GitHub issues, PRs, and commits from repositories"
 group: "github"
 
+kinds:
+  - "dlt"
+  - "github"
+  - "duckdb"
+
 owners:
   - "data-team@company.com"
 

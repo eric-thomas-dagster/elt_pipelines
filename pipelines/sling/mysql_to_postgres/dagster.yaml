@@ -2,6 +2,11 @@ enabled: true
 description: "Replicate MySQL application database to Postgres analytics warehouse"
 group: "database_replication"
 
+kinds:
+  - "sling"
+  - "mysql"
+  - "postgres"
+
 owners:
   - "data-team@company.com"
   - "analytics-team@company.com"
