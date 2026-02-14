@@ -2,6 +2,11 @@ enabled: true
 description: "Load Pokemon data from public PokeAPI - great for demos and testing!"
 group: "demo"
 
+kinds:
+  - "dlt"
+  - "pokeapi"
+  - "duckdb"
+
 owners:
   - "data-team@company.com"
 

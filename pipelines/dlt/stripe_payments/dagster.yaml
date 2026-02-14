@@ -2,6 +2,11 @@ enabled: true
 description: "Extract payment and customer data from Stripe API (partitioned by region)"
 group: "payments"
 
+kinds:
+  - "dlt"
+  - "stripe"
+  - "duckdb"
+
 owners:
   - "finance-team@company.com"
   - "data-team@company.com"

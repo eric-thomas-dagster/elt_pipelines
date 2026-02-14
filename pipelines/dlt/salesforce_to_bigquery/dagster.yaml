@@ -2,6 +2,11 @@ enabled: true
 description: "Sync Salesforce CRM data (Accounts, Opportunities, Contacts, Leads) to BigQuery"
 group: "crm"
 
+kinds:
+  - "dlt"
+  - "salesforce"
+  - "bigquery"
+
 owners:
   - "sales-ops@company.com"
   - "data-team@company.com"
