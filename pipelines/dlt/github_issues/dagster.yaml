@@ -1,15 +1,35 @@
 enabled: true
-description: Load GitHub issues, PRs, and commits from repositories
-group: github
+description: "Load GitHub issues, PRs, and commits from repositories (partitioned by day)"
+group: "github"
+
+kinds:
+  - "dlt"
+  - "github"
+  - "duckdb"
+
 owners:
-- data-team@company.com
+  - "data-team@company.com"
+
+# Partition configuration for incremental loading
+partitions:
+  enabled: true
+  type: "time"
+  time:
+    start: "2024-01-01"
+    cron_schedule: "0 0 * * *"  # Daily partitions
+    timezone: "UTC"
+    fmt: "%Y-%m-%d"
+
 schedule:
   enabled: true
-  cron_schedule: 0 */6 * * *
-  timezone: UTC
+  cron_schedule: "0 2 * * *"  # Run at 2am daily for yesterday's partition
+  timezone: "UTC"
+
 tags:
-  tool: dlt
-  source: github
-  team: data-engineering
+  tool: "dlt"
+  source: "github"
+  team: "data-engineering"
+  incremental: "true"
+
 retries: 3
 retry_delay: 60

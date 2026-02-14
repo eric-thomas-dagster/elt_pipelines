@@ -1,0 +1,13 @@
+# Jokes Pipeline Configuration
+pipeline_name: "jokes"
+destination: "duckdb"
+dataset_name: "jokes_data"
+
+# Resources to load
+resources:
+  - name: "programming_jokes"
+    config:
+      count: 20
+
+# No credentials needed - public API
+credentials: {}

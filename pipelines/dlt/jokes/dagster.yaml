@@ -1,10 +1,10 @@
 enabled: true
-description: "Fetch top and best stories from Hacker News API"
-group: "news"
+description: "Fetch programming jokes from JokeAPI"
+group: "fun"
 
 kinds:
   - "dlt"
-  - "hackernews"
+  - "jokeapi"
   - "duckdb"
 
 owners:
@@ -12,12 +12,12 @@ owners:
 
 schedule:
   enabled: true
-  cron_schedule: "0 */2 * * *"  # Every 2 hours
+  cron_schedule: "0 9 * * *"  # Every day at 9 AM
   timezone: "UTC"
 
 tags:
   tool: "dlt"
-  source: "hackernews"
+  source: "jokeapi"
   destination: "duckdb"
   team: "data-engineering"
   public_api: "true"

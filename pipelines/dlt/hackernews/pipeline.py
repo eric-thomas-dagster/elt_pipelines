@@ -56,7 +56,12 @@ def get_best_stories(max_items: int = 30) -> Iterator[Dict[str, Any]]:
             }
 
 
-if __name__ == "__main__":
+def run(partition_key: str = None):
+    """Execute the Hacker News pipeline.
+
+    Args:
+        partition_key: Partition key for partitioned assets (e.g., "2024-01-01")
+    """
     # Configure the pipeline
     pipeline = dlt.pipeline(
         pipeline_name="hackernews",
@@ -66,4 +71,9 @@ if __name__ == "__main__":
 
     # Run the pipeline
     load_info = pipeline.run([get_top_stories(), get_best_stories()])
-    print(load_info)
+    print(f"Pipeline completed: {load_info}")
+    return load_info
+
+
+if __name__ == "__main__":
+    run()
