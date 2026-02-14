@@ -1,14 +1,25 @@
 enabled: true
-description: "Extract payment and customer data from Stripe API"
+description: "Extract payment and customer data from Stripe API (partitioned by region)"
 group: "payments"
 
 owners:
   - "finance-team@company.com"
   - "data-team@company.com"
 
+# Static partition configuration by region
+partitions:
+  enabled: true
+  type: "static"
+  static:
+    partition_keys:
+      - "us-east"
+      - "us-west"
+      - "eu-central"
+      - "ap-southeast"
+
 schedule:
   enabled: true
-  cron_schedule: "0 */2 * * *"  # Every 2 hours
+  cron_schedule: "0 */4 * * *"  # Every 4 hours for each region
   timezone: "UTC"
 
 tags:
@@ -17,6 +28,7 @@ tags:
   destination: "duckdb"
   team: "finance"
   criticality: "high"
+  partitioned: "by-region"
 
 retries: 3
 retry_delay: 120
