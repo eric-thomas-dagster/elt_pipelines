@@ -1,20 +1,16 @@
 enabled: true
-description: "Sync Postgres database tables to DuckDB"
-group: "database_sync"
-
+description: Sync Postgres database tables to DuckDB
+group: database_sync
 owners:
-  - "data-team@company.com"
-
+- data-team@company.com
 schedule:
   enabled: true
-  cron_schedule: "0 2 * * *"  # Daily at 2 AM
-  timezone: "UTC"
-
+  cron_schedule: 0 2 * * *
+  timezone: UTC
 tags:
-  tool: "sling"
-  source: "postgres"
-  destination: "duckdb"
-  team: "data-engineering"
-
+  tool: sling
+  source: postgres
+  destination: duckdb
+  team: data-engineering
 retries: 3
 retry_delay: 60

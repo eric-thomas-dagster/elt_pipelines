@@ -1,0 +1,19 @@
+enabled: true
+description: HackerNews top stories using REST API generic source (Algolia API)
+group: examples
+owners:
+  - data-engineering@example.com
+tags:
+  tool: dlt
+  source: rest_api
+  destination: duckdb
+  api_provider: algolia
+kinds:
+  - dlt
+  - rest_api
+  - hackernews
+retry_policy:
+  max_retries: 3
+  delay: 30
+  backoff: EXPONENTIAL
+  jitter: FULL

@@ -1,22 +1,18 @@
 enabled: true
-description: "Extract payment and customer data from Stripe API"
-group: "payments"
-
+description: Extract payment and customer data from Stripe API
+group: payments
 owners:
-  - "finance-team@company.com"
-  - "data-team@company.com"
-
+- finance-team@company.com
+- data-team@company.com
 schedule:
   enabled: true
-  cron_schedule: "0 */2 * * *"  # Every 2 hours
-  timezone: "UTC"
-
+  cron_schedule: 0 */2 * * *
+  timezone: UTC
 tags:
-  tool: "dlt"
-  source: "stripe"
-  destination: "duckdb"
-  team: "finance"
-  criticality: "high"
-
+  tool: dlt
+  source: stripe
+  destination: duckdb
+  team: finance
+  criticality: high
 retries: 3
 retry_delay: 120
